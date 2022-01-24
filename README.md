@@ -16,7 +16,7 @@ Pre-registration module consists of the following services:
 
 See [DB guide](db_scripts/README.md)
 
-# Build
+# Build and run (for developers)
 The project requires JDK 1.11. 
 1. To build jars:
     ```
@@ -32,14 +32,6 @@ The project requires JDK 1.11.
     $ cd <service folder>
     $ docker build -f Dockerfile
     ```
-
-# Deploy
-
-## PreReg in Sandbox
-To deploy Pre-registration on Kubernetes cluster using Dockers refer to [mosip-infra](https://github.com/mosip/mosip-infra/tree/1.2.0-rc2/deployment/v3)
-
-## Developer
-
 1. As a developer, to run a service jar individually:
     ```
     `java -Dspring.profiles.active=<profile> -Dspring.cloud.config.uri=<config-url> -Dspring.cloud.config.label=<config-label> -jar <jar-name>.jar`
@@ -50,6 +42,9 @@ To deploy Pre-registration on Kubernetes cluster using Dockers refer to [mosip-i
         _config-url_: `http://localhost:51000` (Url of the config server*)  
 	
 1. Note that you will have to run the dependent services like kernel-config-server to run any service successfully.    
+
+## PreReg in Sandbox
+To deploy Pre-registration on Kubernetes cluster using Dockers refer to [mosip-infra](https://github.com/mosip/mosip-infra/tree/1.2.0-rc2/deployment/v3)
 
 # Configuration
 Refer to the [configuration guide](docs/configuration.md).
